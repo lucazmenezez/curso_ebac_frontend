@@ -1,0 +1,6 @@
+@use 'source/config/variaveis';
+@use 'source/config/reset';
+
+body {
+    background-color: variaveis.$corFundo;
+}
