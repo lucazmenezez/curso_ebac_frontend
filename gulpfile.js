@@ -38,7 +38,8 @@ function funcaoPrivada() {
     console.log('Sou uma função privada');
 }
 
-exports.default = gulp.series(funcaoPadrao);
-exports.sass = compilaSass;
-exports.javascript = comprimeJavascript;
-exports.images = comprimeImagens;
+exports.default = function() {
+    gulp.watch('./source/styles/main.scss', {ignoreInitial: false}, gulp.series(funcaoPadrao, compilaSass));
+    gulp.watch('./source/scripts/*.js', {ignoreInitial: false}, gulp.series(funcaoPadrao, comprimeJavascript));
+    gulp.watch('./source/images/*', {ignoreInitial: false}, gulp.series(funcaoPadrao, comprimeImagens));
+}
