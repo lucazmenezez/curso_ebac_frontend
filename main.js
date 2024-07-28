@@ -1,6 +1,14 @@
-function Objeto(nomeAluno, notaAluno) {
-    this.nome = nomeAluno;
-    this.nota = notaAluno;
+// function Objeto(nomeAluno, notaAluno) {
+//     this.nome = nomeAluno;
+//     this.nota = notaAluno;
+// }
+// FORMA ANTIGA
+
+class Objeto {
+    constructor(nomeAluno, notaAluno) {
+        this.nome = nomeAluno;
+        this.nota = notaAluno;
+    }
 }
 
 const aluno1 = new Objeto("Marcio", 6);
